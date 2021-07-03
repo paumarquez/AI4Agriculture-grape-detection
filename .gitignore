@@ -1,0 +1,8 @@
+/runs
+/checkpoints
+__pycache__
+/logs
+.vscode
+keys.json
+.ipynb_checkpoints
+*.pkl

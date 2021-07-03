@@ -1,0 +1,40 @@
+#!/bin/bash 
+python3 -u train_unet.py \
+    --version $2 \
+    --model $1 \
+    --checkpoints_dir ./checkpoints \
+    --nepochs 400 \
+    --display_freq 1000 \
+    --save_latest_freq 1000 \
+    --dataset AI4EU \
+    --labels_dir ./data/all_labels \
+    --images_dir ./data/complete_dataset \
+    --split_path ./data/splits/split3.json \
+    --wgisd_labels_dir ./data/wgisd \
+    --wgisd_images_dir ./data/wgisd \
+    --wgisd_split_path ./data/splits_wgisd/split1.json \
+    --data_calc_mask \
+    --min_area 0 \
+    --annotators 0,4,5,6 \
+    --annotator_draw 0 \
+    --step_batch_size 1 \
+    --batch_size 4 \
+    --optimizer adam \
+    --optim_metric_name val_loss_reduced \
+    --lr_scheduler \
+    --lr 0.00005 \
+    --lr_scheduler_method tickBased \
+    --lr_scheduler_mode min \
+    --lr_scheduler_factor 0.1 \
+    --lr_scheduler_nticks 15000,40000,60000\
+    --box_nms_thresh 1 \
+    --max_val_samples 200 \
+    --transform_min_size 1024 \
+    --transform_max_size 1024 \
+    --update_constraints_scheduler_freq 10000 \
+    --skip_notbbox_slices \
+    --constraints_time_factor 1.1 \
+    --weak_loss_d 20 \
+    --weak_loss_margins 0.4,0.9 \
+    --weak_loss_alpha 1 \
+    --partitioning_patch_size 1024 \
