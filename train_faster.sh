@@ -1,5 +1,5 @@
 #!/bin/bash 
-python3 -u train.py \
+python3 -u train_faster.py \
     --version $2 \
     --model $1 \
     --checkpoints_dir ./checkpoints \
@@ -24,7 +24,5 @@ python3 -u train.py \
     --transform_min_size 2000 \
     --transform_max_size 2500 \
     --validate_train_split \
-    # --partially_pretrained
-    #--pretrained
      --custom_anchor_widths \
      --backbone_return_layers 1,2,3 \

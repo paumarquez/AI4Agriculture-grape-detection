@@ -61,7 +61,7 @@ class BaseOptions():
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu id to set the device (currently only one supported)')
         self.parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
         self.parser.add_argument('--checkpoint', type=str, default='', help='state dictionary to load to the model')
-        self.parser.add_argument('--model', type=str, default='fasterRCNN', help='model: fasterRCNN, cascade')
+        self.parser.add_argument('--model', type=str, default='fasterRCNN', help='model: [fasterRCNN|ResidualUNet]')
         self.parser.add_argument('--dataset', type=str, default='AI4EU', help='dataset: AI4EU|WGISD|AI4EU_WGISD')
         self.parser.add_argument('--seed', type=int, default=1, help='pyTorch seed')
         self.parser.add_argument('--log_dash', type=int, default=1, help='whether to log to a dash (wandb or tensorboard)')

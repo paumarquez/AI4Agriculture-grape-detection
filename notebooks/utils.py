@@ -91,6 +91,15 @@ def plot_image(data_holder, image_id, boxes=None, show_gt=True, title='', resize
     plt.title(title)
     fig.show()
     
+def apply_nms(results, nms_threshold):
+    nms_idx = [torch.ops.torchvision.nms(r["boxes"], r["scores"], nms_threshold) for r in results]
+    results_nms = [{
+                        **res,
+                        "boxes": res['boxes'][nms_idx[i]],
+                        "labels": res['labels'][nms_idx[i]],
+                        "scores": res['scores'][nms_idx[i]]
+                    } for i, res in enumerate(results)]
+    return results_nms
     
 def get_unet_masks(trainer, image_ids=None, loader=None):
     if loader is None:
