@@ -96,6 +96,7 @@ class DLTemplate:
             self.total_steps += len(data)
             res = self.forward(self.model, data, target)
             loss = self.get_loss_from_model(res, target)
+            loss_info = None
             if type(loss) != torch.Tensor:
                 loss, loss_info = loss
             self.on_train_forward(res, loss=loss, n=len(data), loss_info=loss_info)
