@@ -1,6 +1,6 @@
 # Object Detection and Weakly Supervised Semantic Segmentation for Grape Detection
 
-This project contains the source code to train, evaluate and analyse the object detection and semantic segmentation algorithms built during the final thesis of my bachelor's degree on [Data Science and Engineering at UPC](https://dse.upc.edu/en). This project has been carried out within the [_AI4Agriculture_](https://www.ai4eu.eu/ai4agriculture) pilot.
+This project contains the source code to train, evaluate and analyse the object detection and semantic segmentation algorithms built during the final thesis of my bachelor's degree on [Data Science and Engineering at UPC](https://dse.upc.edu/en). This project has been carried out within the _AI4Agriculture_ pilot, in the [AI4EU](https://www.ai4europe.eu) platform.
 
 The models are embedded in a class that normalizes methods to both evaluate and train. The base interface is in `src/dl_template.py` and both models inherit and implement its functions in `train_faster.py` and `train_unet.py`. Both are implemented using PyTorch.
 
